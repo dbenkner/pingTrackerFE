@@ -1,0 +1,13 @@
+<div class="wrapper">
+  <div *ngFor="let website of websites">
+    <table>
+      <tbody>
+        <tr>
+          <td>ID</td><td>{{website.id}}</td>
+          <td>URL</td><td>{{website.url}}</td>
+          <td>Average Ping</td><td>{{website.averagePing}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
