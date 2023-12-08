@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Website } from '../Website';
+import { Website } from '../Website.class';
 import { HttpClient } from '@angular/common/http';
 import { WebsiteService } from '../website.service';
 import { CommonModule } from '@angular/common';
@@ -22,7 +22,6 @@ export class ListAllWebsitesComponent implements OnInit {
     this.webSVC.getAllWebsites().subscribe(
       res => {
         this.websites = res;
-        console.log(res);
       },
       err => {
         console.error(err);

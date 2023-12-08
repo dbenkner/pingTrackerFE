@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Website } from './Website';
-import { AddWebsiteDto } from './AddWebsiteDto';
+import { Website } from './Website.class';
+import { AddWebsiteDto } from './AddWebsiteDto.class';
 
 @Injectable({
   providedIn: 'root'

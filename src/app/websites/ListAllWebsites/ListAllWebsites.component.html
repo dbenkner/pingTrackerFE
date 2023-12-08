@@ -1,13 +1,20 @@
 <div class="wrapper">
-  <div *ngFor="let website of websites">
+  <div class="websiteContainer" *ngFor="let website of websites">
     <table>
       <tbody>
         <tr>
           <td>ID</td><td>{{website.id}}</td>
+        </tr>
+        <tr>
           <td>URL</td><td>{{website.url}}</td>
+        </tr>
+        <tr>
           <td>Average Ping</td><td>{{website.averagePing}}</td>
         </tr>
       </tbody>
     </table>
+    <div class="link container">
+      <a routerLink='/pingResults/{{website.id}}'>Details</a>
+    </div>
   </div>
 </div>
