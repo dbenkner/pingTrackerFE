@@ -1,3 +1,4 @@
+import { Time } from "@angular/common";
 import { Website } from "../websites/Website.class";
 
 export class PingResults {
@@ -7,5 +8,5 @@ export class PingResults {
     websiteId: number = 0;
     website?: Website;
     address: string = "";
-    dateTime?: Date;
+    dateTime: Date = new Date();
 }

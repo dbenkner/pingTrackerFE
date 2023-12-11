@@ -1,1 +1,23 @@
-<p>ping-results works!</p>
+<div class="websiteDeatils">
+<button class="btn" (click)="sendPing()">Send Ping</button>
+</div>
+<div class="pingResultsTable">
+    <table class="pignTable">
+        <thead>
+            <tr>
+                <th>Address</th>
+                <th>Date/Time</th>
+                <th>RTT</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let res of pingResults">
+            <tr>
+                <td>{{res.address}}</td>
+                <td>{{res.dateTime | date:'short'}}</td>
+                <td>{{res.rtt}}</td>
+                <td>{{res.status}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

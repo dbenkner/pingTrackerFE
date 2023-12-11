@@ -5,6 +5,7 @@ import { WebsiteService } from 'src/app/websites/website.service';
 import { PingResultService } from '../ping-result.service';
 import { PingResults } from '../pingResults.class';
 import { Website } from 'src/app/websites/Website.class';
+import { SendPingDto } from '../sendPingDto';
 
 @Component({
   selector: 'app-ping-results',
@@ -15,6 +16,7 @@ export class PingResultsComponent {
   id:number =0;
   pingResults: PingResults[] = [];
   website!: Website;
+
   constructor (    
     private http: HttpClient,
     private router: Router,
@@ -25,7 +27,19 @@ export class PingResultsComponent {
   ngOnInit() :void {
     this.id = this.route.snapshot.params['id'];
     console.log(this.id);
-    this.pingResultSvc.getPingResultsById(this.id).subscribe(
+    this.loadPingResults(this.id);
+    this.webSvc.getWebsiteByID(this.id).subscribe(
+      res => {
+        this.website = res;
+        console.log(this.website);
+      },
+      err => {
+        console.error(err);
+      });
+
+  }
+  loadPingResults(id:number) {
+    this.pingResultSvc.getPingResultsById(id).subscribe(
       res => {
         this.pingResults = res;
         console.log(this.pingResults);
@@ -34,5 +48,17 @@ export class PingResultsComponent {
         console.error(err);
       }
     );
+  }
+  sendPing() {
+    let pingDto: SendPingDto = new SendPingDto(this.website.url, this.website.id)
+    this.pingResultSvc.sendPing(pingDto).subscribe(
+      res => {
+        console.log(res);
+        this.loadPingResults(this.id);
+      },
+      err => {
+        console.error(err);
+      }
+    )
   }
 }
