@@ -1,5 +1,15 @@
 <div class="websiteDeatils">
 <button class="btn" (click)="sendPing()">Send Ping</button>
+<table>
+    <tbody>
+        <tr>
+            <td>URL</td>
+            <td>{{website.url}}</td>
+        </tr>
+            <td>Average Ping</td>
+            <td>{{website.averagePing}}</td>
+    </tbody>
+</table>
 </div>
 <div class="pingResultsTable">
     <table class="pignTable">

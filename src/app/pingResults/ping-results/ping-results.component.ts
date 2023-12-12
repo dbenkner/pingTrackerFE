@@ -28,14 +28,6 @@ export class PingResultsComponent {
     this.id = this.route.snapshot.params['id'];
     console.log(this.id);
     this.loadPingResults(this.id);
-    this.webSvc.getWebsiteByID(this.id).subscribe(
-      res => {
-        this.website = res;
-        console.log(this.website);
-      },
-      err => {
-        console.error(err);
-      });
 
   }
   loadPingResults(id:number) {
@@ -48,6 +40,15 @@ export class PingResultsComponent {
         console.error(err);
       }
     );
+    this.webSvc.getWebsiteByID(this.id).subscribe(
+      res => {
+        this.website = res;
+        console.log(this.website);
+      },
+      err => {
+        console.error(err);
+      });
+
   }
   sendPing() {
     let pingDto: SendPingDto = new SendPingDto(this.website.url, this.website.id)
