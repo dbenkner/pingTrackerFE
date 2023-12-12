@@ -10,13 +10,15 @@ import { ListAllWebsitesComponent } from './websites/ListAllWebsites/ListAllWebs
 import { PingResultsComponent } from './pingResults/ping-results/ping-results.component';
 import { RouterModule } from '@angular/router';
 import { RouterLink } from '@angular/router';
+import { AddNewWebsiteComponent } from './websites/add-new-website/add-new-website.component';
 
 
  @NgModule({
   declarations: [
     AppComponent,
     ListAllWebsitesComponent,
-    PingResultsComponent
+    PingResultsComponent,
+    AddNewWebsiteComponent
   ],
   imports: [
     BrowserModule,

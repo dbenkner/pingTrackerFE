@@ -1,0 +1,15 @@
+<div class="tableContainer">
+    <table>
+        <tr>
+            <td>Website URL/IP</td>
+            <td><input [(ngModel)]="websiteDto.url"></td>
+        </tr>
+        <tr>
+            <td>Website Nickname</td>
+            <td><input [(ngModel)]="websiteDto.websiteNickname"></td>
+        </tr>
+    </table>
+    <div class="btnContainer">
+        <button (click)="addNewWebsite()">Add New Website</button>
+    </div>
+</div>

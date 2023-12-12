@@ -1,9 +1,15 @@
+<div class="options">
+  <a routerLink="/addNewSite">Add New</a>
+</div>
 <div class="wrapper">
   <div class="websiteContainer" *ngFor="let website of websites">
     <table>
       <tbody>
         <tr>
           <td>ID</td><td>{{website.id}}</td>
+        </tr>
+        <tr>
+          <td>Nickname</td><td>{{website.websiteNickname}}</td>
         </tr>
         <tr>
           <td>URL</td><td>{{website.url}}</td>
