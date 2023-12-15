@@ -35,7 +35,7 @@ import { MenuComponent } from './menu/menu/menu.component';
     RouterLink,
     RouterModule
   ],
-  providers: [],
+  providers: [MenuComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,1 +1,14 @@
-<p>login works!</p>
+<app-menu></app-menu>
+<div class="loginContainer">
+    <div class="inputContainer">
+        <span>Username</span>
+        <input [(ngModel)]="loginDto.username">
+    </div>
+    <div class="inputContainer">
+        <span>Password</span>
+        <input [(ngModel)]="loginDto.password" type="password">
+    </div>
+    <div class="btnContainer">
+        <button (click)="login()">Login</button>
+    </div>
+</div>

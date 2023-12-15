@@ -3,9 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { ListAllWebsitesComponent } from './websites/ListAllWebsites/ListAllWebsites.component';
 import { PingResultsComponent } from './pingResults/ping-results/ping-results.component';
 import { AddNewWebsiteComponent } from './websites/add-new-website/add-new-website.component';
+import { LoginComponent } from './users/login/login.component';
 
 const routes: Routes = [
-  {path: "", redirectTo:'/ListAllWebsites', pathMatch: "full"},
+  {path: "", redirectTo:'/login', pathMatch: "full"},
+  {path: 'login', component:LoginComponent},
   {path: 'ListAllWebsites', component:ListAllWebsitesComponent},
   {path: 'addNewSite', component:AddNewWebsiteComponent},
   {path: 'pingResults/:id', component:PingResultsComponent}

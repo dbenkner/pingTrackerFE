@@ -5,6 +5,8 @@ import { GlobalService } from 'src/app/core/global.service';
 import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { loginDto } from '../loginDto.class';
+import { FormsModule } from '@angular/forms';
+import { MenuComponent } from 'src/app/menu/menu/menu.component';
 
 @Component({
   selector: 'app-login',
@@ -12,13 +14,14 @@ import { loginDto } from '../loginDto.class';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  user?:User;
+  user!:User |undefined;
   loginDto: loginDto = new loginDto();
   constructor(
     private http:HttpClient,
     private globalSvc:GlobalService,
     private route: Router,
-    private userSvc: UserService
+    private userSvc: UserService,
+    private menu: MenuComponent
   ) {}
   ngOnInit() {
     this.user = this.globalSvc.loggedInUser;
@@ -29,6 +32,8 @@ export class LoginComponent {
         this.user = res;
         this.globalSvc.setLoggedInUser(this.user);
         console.log(this.globalSvc.loggedInUser);
+        this.route.navigate(['/ListAllWebsites']);
+        this.menu.refresh();
       },
       err => {
         console.error(err);
