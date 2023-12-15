@@ -11,6 +11,9 @@ import { PingResultsComponent } from './pingResults/ping-results/ping-results.co
 import { RouterModule } from '@angular/router';
 import { RouterLink } from '@angular/router';
 import { AddNewWebsiteComponent } from './websites/add-new-website/add-new-website.component';
+import { LoginComponent } from './users/login/login.component';
+import { RegisterComponent } from './users/register/register.component';
+import { MenuComponent } from './menu/menu/menu.component';
 
 
  @NgModule({
@@ -18,7 +21,10 @@ import { AddNewWebsiteComponent } from './websites/add-new-website/add-new-websi
     AppComponent,
     ListAllWebsitesComponent,
     PingResultsComponent,
-    AddNewWebsiteComponent
+    AddNewWebsiteComponent,
+    LoginComponent,
+    RegisterComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

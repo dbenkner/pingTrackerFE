@@ -1,16 +1,16 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
-import { GlobalServiceService } from './global-service.service';
+import { GlobalService } from './global.service';
 
 describe('Service: GlobalService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [GlobalServiceService]
+      providers: [GlobalService]
     });
   });
 
-  it('should ...', inject([GlobalServiceService], (service: GlobalServiceService) => {
+  it('should ...', inject([GlobalService], (service: GlobalService) => {
     expect(service).toBeTruthy();
   }));
 });
