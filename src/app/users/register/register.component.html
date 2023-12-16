@@ -1,2 +1,18 @@
 <app-menu></app-menu>
-<p>register works!</p>
+<div class="registerContainer">
+    <div class="inputLine">
+        Username
+        <input [(ngModel)]="registerDto.username">
+    </div>
+    <div class="inputLine">
+        Password
+        <input [(ngModel)]="registerDto.password" type="password">
+    </div>
+    <div class="inputLine">
+        Email
+        <input [(ngModel)]="registerDto.email">
+    </div>
+    <div class="btnContainer">
+        <button (click)="newUser()">Register</button>
+    </div>
+</div>
