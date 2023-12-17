@@ -33,7 +33,7 @@ export class RegisterComponent {
       },
       err => {
         console.error(err);
-        this.message = err;
+        this.message = err.error;
       }
     );
   }
