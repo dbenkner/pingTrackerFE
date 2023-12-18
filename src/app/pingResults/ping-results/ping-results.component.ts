@@ -6,6 +6,8 @@ import { PingResultService } from '../ping-result.service';
 import { PingResults } from '../pingResults.class';
 import { Website } from 'src/app/websites/Website.class';
 import { SendPingDto } from '../sendPingDto';
+import { User } from 'src/app/users/user.class';
+import { GlobalService } from 'src/app/core/global.service';
 
 @Component({
   selector: 'app-ping-results',
@@ -16,19 +18,21 @@ export class PingResultsComponent {
   id:number =0;
   pingResults: PingResults[] = [];
   website!: Website;
+  user!: User;
 
   constructor (    
     private http: HttpClient,
     private router: Router,
     private route: ActivatedRoute,
     private webSvc: WebsiteService,
-    private pingResultSvc: PingResultService) {}
+    private pingResultSvc: PingResultService,
+    private gobalSvc: GlobalService) {}
 
   ngOnInit() :void {
     this.id = this.route.snapshot.params['id'];
     console.log(this.id);
     this.loadPingResults(this.id);
-
+    this.user = this.gobalSvc.loggedInUser;
   }
   loadPingResults(id:number) {
     this.pingResultSvc.getPingResultsById(id).subscribe(
@@ -51,7 +55,7 @@ export class PingResultsComponent {
 
   }
   sendPing() {
-    let pingDto: SendPingDto = new SendPingDto(this.website.url, this.website.id)
+    let pingDto: SendPingDto = new SendPingDto(this.website.url, this.website.id, this.user.id)
     this.pingResultSvc.sendPing(pingDto).subscribe(
       res => {
         console.log(res);

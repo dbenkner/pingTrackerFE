@@ -16,6 +16,9 @@ export class WebsiteService {
   getAllWebsites(): Observable<Website[]> {
     return this.http.get(this.url) as Observable<Website[]>;
   }
+  getWebsitesByUserId(userID: number): Observable<Website[]> {
+    return this.http.get(`${this.url}/userId/${userID}`) as Observable<Website[]>;
+  }
   getWebsiteByID(id:number): Observable<Website> {
     return this.http.get(`${this.url}/${id}`) as Observable<Website>;
   }
