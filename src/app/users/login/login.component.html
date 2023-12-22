@@ -1,15 +1,17 @@
 <app-menu></app-menu>
-<div class="loginContainer">
-    <div class="inputContainer">
-        <span>Username</span>
-        <input [(ngModel)]="loginDto.username">
+<div class="wrapper">
+    <div class="loginContainer">
+        <div class="inputContainer">
+            <span>Username</span>
+            <input [(ngModel)]="loginDto.username">
+        </div>
+        <div class="inputContainer">
+            <span>Password</span>
+            <input [(ngModel)]="loginDto.password" type="password">
+        </div>
+        <div class="btnContainer">
+            <button (click)="login()">Login</button>
+        </div>
+        <a routerLink="/register">Register New User</a>
     </div>
-    <div class="inputContainer">
-        <span>Password</span>
-        <input [(ngModel)]="loginDto.password" type="password">
-    </div>
-    <div class="btnContainer">
-        <button (click)="login()">Login</button>
-    </div>
-    <a routerLink="/register">Register New User</a>
 </div>
