@@ -1,17 +1,17 @@
 <app-menu></app-menu>
-<div class="wrapper">
-    <div class="loginContainer">
-        <div class="inputContainer">
-            <span class="logTitle">Username</span>
-            <input [(ngModel)]="loginDto.username">
+<div class="d-flex align-items-center align-items-center vh-100">
+    <div class="container border border-dark rounded" style="width: 500px">
+        <div class="row m-2">
+            <span class="col-4 p-0">Username</span>
+            <input [(ngModel)]="loginDto.username" class="col-8 border border-dark rounded">
         </div>
-        <div class="inputContainer">
-            <span class="logTitle">Password</span>
-            <input [(ngModel)]="loginDto.password" type="password">
+        <div class="row m-2">
+            <span class="col-4 p-0">Password</span>
+            <input [(ngModel)]="loginDto.password" type="password" class="col-8 border border-dark rounded">
         </div>
-        <div class="btnContainer">
-            <button (click)="login()">Login</button>
+        <div class="d-flex justify-content-between m-2">
+            <a routerLink="/register">Register New User</a>
+            <button (click)="login()" class="btn btn-primary btn-sm">Login</button>
         </div>
-        <a routerLink="/register">Register New User</a>
     </div>
 </div>
